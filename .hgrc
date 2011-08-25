@@ -1,0 +1,16 @@
+[ui]
+username = Kevin Cantu <me@kevincantu.org>
+
+[hooks]
+#post-push = python:/code/3p/pos/github_mirror/github_mirror.py:post_push
+
+[extensions]
+hgext.extdiff =
+
+[extdiff]
+cmd.kdiff3 =
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+
+
