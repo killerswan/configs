@@ -1,9 +1,10 @@
 " Kevin's GVIM config
 
-filetype off
 call pathogen#infect()
-
+filetype off
 syntax on
+filetype plugin on
+
 
 set softtabstop=3
 set shiftwidth=3
@@ -71,11 +72,5 @@ endif
 if has("statusline")
    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
 endif
-
-
-" F# via fs.vim
-au BufRead,BufNewFile *.fs set filetype=fs
-au BufRead,BufNewFile *.fsi set filetype=fs
-au BufRead,BufNewFile *.fsx set filetype=fs
 
 
