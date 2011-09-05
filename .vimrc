@@ -1,7 +1,7 @@
 " Kevin's GVIM config
 
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 syntax on
 
@@ -19,25 +19,13 @@ set ignorecase
 "set nowrap
 set fileformat=unix
 set display=uhex
-set ruler
-
-set nocompatible  "does this do anything? :P
-
-
-"clojure
-"let vimclojure#HighlightBuiltins = 1
-"let vimclojure#ParenRainbow = 1
-
+set ruler " otherwise, ctrl-g should show it
+set laststatus=2 " show statusline even for single buffer
 
 
 "stop pressing shift all the time
 nnoremap ; :
 
-
-"set background=dark
-"colorscheme macvim
-"colorscheme two2tango
-colorscheme summerfruit
 
 
 if has("gui_running")
@@ -46,15 +34,9 @@ if has("gui_running")
       set guifont=Inconsolata\ 14
       set printfont=Inconsolata:h9
    elseif has("gui_win32")
-      set guifont=Consolas:h9
+      set guifont=Consolas:h12
       set printfont=Consolas:h9
    endif
-   
-   "colorscheme macvim
-   "set background=dark
-
-   "colorscheme mod_tcsoft
-   "set background=light
    
    colorscheme summerfruit
 
@@ -62,16 +44,36 @@ if has("gui_running")
    set guioptions-=T    " no toolbars
    "set guioptions+=t   " tear-off menus
    "set guioptions+=b   " bottom scrollbar
-   set guioptions-=r    " remove right scrollbar
+   "set guioptions-=r   " remove right scrollbar
 
 
    " filetypes in menu by default
    let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax.&Show\ filetypes\ in\ menu
 
+else
+   behave xterm " from cygwin .vimrc
 endif
 
 
-" F# syntax highlighting
+" UTF-8
+if has("multi_byte")
+   if &termencoding == ''
+      let &termencoding = &encoding
+   endif
+   set encoding=utf-8
+   set fileencodings=ucs-bom,utf-8,default,latin1
+   setglobal fileencoding=utf-8
+   "setglobal bomb
+else
+   echomsg 'Warning: Multibyte support is not compiled-in.'
+endif
+
+if has("statusline")
+   set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+
+
+" F# via fs.vim
 au BufRead,BufNewFile *.fs set filetype=fs
 au BufRead,BufNewFile *.fsi set filetype=fs
 au BufRead,BufNewFile *.fsx set filetype=fs
