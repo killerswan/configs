@@ -1,0 +1,9 @@
+[submodule "vim-stuff/pathogen"]
+	path = vim-stuff/pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim-stuff/summerfruit"]
+	path = vim-stuff/summerfruit
+	url = https://github.com/vim-scripts/summerfruit.vim.git
+[submodule "vim-stuff/summerfruit256"]
+	path = vim-stuff/summerfruit256
+	url = https://github.com/vim-scripts/summerfruit256.vim.git

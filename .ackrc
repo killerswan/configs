@@ -1,0 +1,9 @@
+
+--color-filename=blue
+--color-match=magenta
+--color-lineno=green
+
+--type-set=thrift=.thrift
+--type-set=rust=.rs,.rc
+--type-set=fsharp=.fs,.fsx,.fsi
+
