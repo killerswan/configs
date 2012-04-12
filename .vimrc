@@ -22,6 +22,9 @@ set display=uhex
 set ruler " otherwise, ctrl-g should show it
 set laststatus=2 " show statusline even for single buffer
 
+" ctags: tags file in current dir, dir of file, then walk up to root
+set tags=tags,./tags;/
+
 "stop pressing shift all the time
 nnoremap ; :
 
