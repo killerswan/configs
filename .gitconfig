@@ -1,3 +1,7 @@
 [user]
 	name = Kevin Cantu
 	email = me@kevincantu.org
+[core]
+	#autocrlf = false
+[merge]
+	conflictstyle = diff3

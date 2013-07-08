@@ -1,7 +1,6 @@
-
---color-filename=blue
---color-match=magenta
---color-lineno=green
+#--color-filename=blue
+#--color-match=magenta
+#--color-lineno=green
 
 --type-set=thrift=.thrift
 --type-set=rust=.rs,.rc

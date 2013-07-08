@@ -1,2 +1,9 @@
 *~
-*.swp
+*.sw[nop]
+Thumbs.db
+*.pyc
+*.suo
+.*user
+bin/
+obj/
+Output/

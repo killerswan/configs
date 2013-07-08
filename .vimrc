@@ -41,7 +41,7 @@ if has("gui_running")
    endif
 
    if has("gui_win32")
-      set guifont=Consolas:h12
+      set guifont=Consolas:h10
       set printfont=Consolas:h9
    endif
    

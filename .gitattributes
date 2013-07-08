@@ -1,0 +1,26 @@
+*.txt text
+*.png -text
+
+*.js eol=lf
+*.htm eol=lf
+*.html eol=lf
+*.css eol=lf
+.htaccess eol=lf
+.htdigest eol=lf
+passwords -text
+*.cgi eol=lf
+
+*.sh eol=lf
+*.pl eol=lf
+*.py eol=lf
+*.rb eol=lf
+
+*.fs eol=crlf
+*.cs eol=crlf
+*.vbs eol=crlf
+*.bat eol=crlf
+*.cmd eol=crlf
+wpad.dat eol=lf
+*.fsproj eol=crlf
+*.vcproj eol=crlf
+*.vbsproj eol=crlf
