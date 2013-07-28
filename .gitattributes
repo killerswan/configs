@@ -1,26 +1,42 @@
-*.txt text
-*.png -text
+*.txt    text
 
-*.js eol=lf
-*.htm eol=lf
-*.html eol=lf
-*.css eol=lf
-.htaccess eol=lf
-.htdigest eol=lf
-passwords -text
-*.cgi eol=lf
+*.png    -text
+*.jpg    -text
+*.gif    -text
+*.doc    -text
+*.xls    -text
 
-*.sh eol=lf
-*.pl eol=lf
-*.py eol=lf
-*.rb eol=lf
+.gitattributes    eol=lf
+.gitignore        eol=lf
+*.md     eol=lf
+*.htm    eol=lf
+*.html   eol=lf
+*.css    eol=lf
+*.sh     eol=lf
+*.bash   eol=lf
+*.js     eol=lf
+*.py     eol=lf
+*.pl     eol=lf
+*.rb     eol=lf
+*.hs     eol=lf
+*.cabal  eol=lf
 
-*.fs eol=crlf
-*.cs eol=crlf
-*.vbs eol=crlf
-*.bat eol=crlf
-*.cmd eol=crlf
-wpad.dat eol=lf
+*.cgi       eol=lf
+.htaccess   eol=lf
+.htdigest   eol=lf
+passwords   eol=lf
+.ackrc      eol=lf
+.vimrc      eol=lf
+.bashrc     eol=lf
+
+*.bat    eol=crlf
+*.cmd    eol=crlf
+*.fs     eol=crlf
+*.fsx    eol=crlf
+*.fsi    eol=crlf
+*.cs     eol=crlf
 *.fsproj eol=crlf
+*.csproj eol=crlf
+*.vbproj eol=crlf
 *.vcproj eol=crlf
-*.vbsproj eol=crlf
+

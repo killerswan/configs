@@ -7,3 +7,9 @@
 [submodule "vim-stuff/summerfruit256"]
 	path = vim-stuff/summerfruit256
 	url = https://github.com/vim-scripts/summerfruit256.vim.git
+[submodule "vim-markdown"]
+	path = vim-markdown
+	url = ./vim-stuff/vim-markdown/
+[submodule "vim-stuff/vim-markdown"]
+	path = vim-stuff/vim-markdown
+	url = https://github.com/hallison/vim-markdown
