@@ -3,5 +3,6 @@
 	email = me@kevincantu.org
 [core]
 	#autocrlf = false
+	editor = /usr/bin/gvim --nofork
 [merge]
 	conflictstyle = diff3
