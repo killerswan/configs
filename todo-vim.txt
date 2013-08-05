@@ -1,1 +1,0 @@
-Add submodules for F#, Rust, and Thrift, or insert manually.
