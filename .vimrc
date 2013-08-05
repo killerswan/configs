@@ -1,6 +1,11 @@
 " Kevin's GVIM config
 
+" default .vim/bundle/
+execute pathogen#infect()
+
+" custom
 execute pathogen#infect('~/code/configs/bundle/{}')
+
 filetype off
 syntax on
 filetype plugin on
