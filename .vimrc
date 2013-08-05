@@ -1,6 +1,6 @@
 " Kevin's GVIM config
 
-call pathogen#infect()
+execute pathogen#infect('~/code/configs/bundle/{}')
 filetype off
 syntax on
 filetype plugin on
