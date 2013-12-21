@@ -48,6 +48,9 @@ if has("gui_running")
    if has("gui_win32")
       set guifont=Consolas:h10
       set printfont=Consolas:h9
+
+      source $VIMRUNTIME/mswin.vim
+      behave mswin "CTRL X, CTRL C, CTRL V
    endif
    
    colorscheme summerfruit
