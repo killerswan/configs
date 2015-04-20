@@ -11,13 +11,22 @@ git submodule update
 ```
 
 
-Ack
-===
+Ack and Ag
+==========
 
 To set up Ack, on a system with cpan:
+
 ```
 sudo cpan App::Ack
 ```
+
+On OS X, to install Ag:
+```
+brew install the_silver_searcher
+```
+
+I also had to chown /usr/local/lib/pkgconfig, but that seems unrelated...
+
 
 VIM Pathogen setup
 ==================
