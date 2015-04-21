@@ -43,3 +43,6 @@
 [submodule "fsharpbinding"]
 	path = fsharpbinding
 	url = https://github.com/fsharp/fsharpbinding.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

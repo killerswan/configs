@@ -19,7 +19,7 @@ ln -s $(pwd)/vim-pathogen/autoload/pathogen.vim  ~/.vim/autoload/pathogen.vim
 ```
 
 
-Ack
+[Ack](http://beyondgrep.com/install/)
 ===
 
 On platforms with cpan, to set up Ack:
@@ -28,7 +28,12 @@ On platforms with cpan, to set up Ack:
 sudo cpan App::Ack
 ```
 
-Ag
+Or on OS X:
+```
+brew install ack
+```
+
+[Ag](https://github.com/ggreer/the_silver_searcher)
 ==
 
 On OS X, to install Ag:
@@ -39,24 +44,16 @@ brew install the_silver_searcher
 I also had to chown /usr/local/lib/pkgconfig, but that seems unrelated...
 
 
-Pathogen setup
-==============
-
-Make sure that `.vimrc` points to this `bundle` directory,
-and copy the `vim-pathogen/autoload/pathogen.vim` file into
-`~/.vim/autoload/pathogen.vim`.
-
-
 Vim: Tern
 =========
 
-To setup Tern, make sure an architecture-matched Python and Node.js are available, and run `npm install` in the package.
+Run `npm install` in the package, and make sure Node.js and Python (matching Vim's architecture) are available.
 
 
 Vim: vimproc
 ============
 
-Unite.vim requires this, which can be compiled with `make` or, e.g., `make ARCHS='i386 x86_64'`.
+Compile this with `make` or, e.g., `make ARCHS='i386 x86_64'`.  (Required for grepping in Unite.vim.)
 
 
 Vim: F# binding

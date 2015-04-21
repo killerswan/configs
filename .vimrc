@@ -142,6 +142,10 @@ nnoremap <silent><c-f> :<c-u>Unite file_rec:.<cr>
 "\ll to resume
 nnoremap <silent><leader>ll :<c-u>UniteResume<cr>
 
-" background :Ack
+" background calls to Ack
 let g:ack_use_dispatch = 1
+
+let g:syntastic_python_checkers = ['pyflakes']
+
+
 
