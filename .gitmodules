@@ -1,18 +1,3 @@
-[submodule "vim-stuff/pathogen"]
-	path = vim-stuff/pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule "vim-stuff/summerfruit"]
-	path = vim-stuff/summerfruit
-	url = https://github.com/vim-scripts/summerfruit.vim.git
-[submodule "vim-stuff/summerfruit256"]
-	path = vim-stuff/summerfruit256
-	url = https://github.com/vim-scripts/summerfruit256.vim.git
-[submodule "vim-markdown"]
-	path = vim-markdown
-	url = ./vim-stuff/vim-markdown/
-[submodule "vim-stuff/vim-markdown"]
-	path = vim-stuff/vim-markdown
-	url = https://github.com/hallison/vim-markdown
 [submodule "vim-pathogen"]
 	path = vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
@@ -24,7 +9,7 @@
 	url = https://github.com/vim-scripts/summerfruit256.vim.git
 [submodule "bundle/fsharp-vim"]
 	path = bundle/fsharp-vim
-	url = git@github.com:killerswan/fsharp-vim.git
+	url = https://github.com/kongo2002/fsharp-vim.git
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
