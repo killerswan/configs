@@ -3,6 +3,7 @@
 " default .vim/bundle/
 execute pathogen#infect()
 execute pathogen#infect('~/code/configs/bundle/{}')
+execute pathogen#infect('C:/code/configs/bundle/{}')
 
 filetype off
 syntax on
@@ -24,6 +25,7 @@ set fileformat=unix
 set display=uhex
 set ruler " otherwise, ctrl-g should show it
 set laststatus=2 " show statusline even for single buffer
+"set spell
 
 " ctags: tags file in current dir, dir of file, then walk up to root
 set tags=tags,./tags;/
@@ -139,4 +141,7 @@ nnoremap <silent><c-f> :<c-u>Unite file_rec:.<cr>
 
 "\ll to resume
 nnoremap <silent><leader>ll :<c-u>UniteResume<cr>
+
+" background :Ack
+let g:ack_use_dispatch = 1
 

@@ -1,12 +1,34 @@
+*.swp
+*.swo
+*.exe
 *~
+*.o
+*.so
+*.tmp
+*.lock
 .DS_Store
-.*.sw[nop]
-Thumbs.db
+
+*.dSYM
+.rust
+*.dylib
+*.rlib
+
 *.pyc
-*.suo
-obj/
-bin/
-Output/
+*.pyo
+
+obj
+bin
+/build/
+/dist/
+/wheelhouse/
+
+/*.egg-info/
+/venv/
+/.venv/
+
+nosetests.xml
+/out/
+/Output/
 
 # git ls-files --others --exclude-from=.git/info/exclude
 # git ls-files --others --exclude-from=.gitignore

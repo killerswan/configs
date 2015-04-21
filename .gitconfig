@@ -1,8 +1,38 @@
 [user]
-	name = Kevin Cantu
-	email = me@kevincantu.org
+    name = Kevin Cantu
+    email = me@kevincantu.org
+    #signingkey = 23423
+
+[color]
+    ui = true
+
 [core]
-	#autocrlf = false
-	editor = /usr/bin/gvim --nofork
+    #autocrlf = false
+    #editor = /usr/bin/gvim --nofork
+
+    # Windows speedups
+    preloadindex = true
+    fscache = true
+
+[gc]
+    #auto = 256
+
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
+    #tool = kdiff3
+
+[mergetool "kdiff3"]
+   #path = C:/Progra~2/KDiff3/kdiff3.exe
+   #keepBackup = false
+   #trustExitCode = false
+
+[alias]
+   ll = log --decorate=full --graph --show-signature --no-pager
+   ffm = ! git fetch origin && git checkout master && git merge --ff-only origin/master && git ll -1
+
+[push]
+    default = nothing
+
+[status]
+    showUntrackedFiles = all
+

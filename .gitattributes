@@ -1,42 +1,56 @@
-*.txt    text
+[attr]code      eol=lf whitespace=tab-in-indent,trailing-space,tabwidth=4
+[attr]wincode   code eol=crlf
 
-*.png    -text
-*.jpg    -text
-*.gif    -text
-*.doc    -text
-*.xls    -text
+.gitattributes code
+.gitignore     code
+.gitmodules    code
 
-.gitattributes    eol=lf
-.gitignore        eol=lf
-*.md     eol=lf
-*.htm    eol=lf
-*.html   eol=lf
-*.css    eol=lf
-*.sh     eol=lf
-*.bash   eol=lf
-*.js     eol=lf
-*.py     eol=lf
-*.pl     eol=lf
-*.rb     eol=lf
-*.hs     eol=lf
-*.cabal  eol=lf
+*.md        code
+*.jl        code
+*.rs        code
+*.hs        code
+*.bash      code
+*.sh        code
+*.py        code
+*.rb        code
+*.pl        code
+*.js        code
+*.html      code
+*.htm       code
+*.css       code
+*.in        code
+*.wsgi      code
 
-*.cgi       eol=lf
-.htaccess   eol=lf
-.htdigest   eol=lf
-passwords   eol=lf
-.ackrc      eol=lf
-.vimrc      eol=lf
-.bashrc     eol=lf
+*.fs        wincode
+*.cs        wincode
+*.csproj    wincode
+*.fsproj    wincode
+*.bat       wincode
+*.cmd       wincode
 
-*.bat    eol=crlf
-*.cmd    eol=crlf
-*.fs     eol=crlf
-*.fsx    eol=crlf
-*.fsi    eol=crlf
-*.cs     eol=crlf
-*.fsproj eol=crlf
-*.csproj eol=crlf
-*.vbproj eol=crlf
-*.vcproj eol=crlf
+*.sql       text
+*.xml       text
+*.ini       text
+*.png       -text
+*.jpg       -text
+*.gif       -text
+*.pdf       -text
+*.exe       -text
+*.dll       -text
+*.zip       -text
+*.gz        -text
+*.7z        -text
+
+# CRYPTO
+
+*.pretty    text
+*.sig       text
+*.key       text
+*.msg       eol=lf
+*.b64       text
+*.pem       text
+*.csr       text
+*.der       -text
+*.crt       -text
+
 
