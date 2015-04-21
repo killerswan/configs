@@ -7,9 +7,6 @@
 [submodule "bundle/summerfruit256"]
 	path = bundle/summerfruit256
 	url = https://github.com/vim-scripts/summerfruit256.vim.git
-[submodule "bundle/fsharp-vim"]
-	path = bundle/fsharp-vim
-	url = https://github.com/kongo2002/fsharp-vim.git
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
@@ -43,3 +40,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "fsharpbinding"]
+	path = fsharpbinding
+	url = https://github.com/fsharp/fsharpbinding.git
