@@ -1,13 +1,21 @@
 Configs
 =======
 
-Copy or link the .* files into ~ or %userprofile%.
+Confirm that [.vimrc](.vimrc) refers to the bundle directory.  Then update the submodules and copy or link config files into `~` or `%userprofile%`:
 
-Update the submodules:
+```bash
+git submodule update --init
 
-```
-git submodule init
-git submodule update
+ln -s $(pwd)/.vimrc        ~/.vimrc
+ln -s $(pwd)/.ackrc        ~/.ackrc
+ln -s $(pwd)/.gitconfig    ~/.gitconfig
+ln -s $(pwd)/.hgrc         ~/.hgrc
+ln -s $(pwd)/.bashrc       ~/.bashrc
+ln -s $(pwd)/.bash_profile ~/.bash_profile
+ln -s $(pwd)/.inputrc      ~/.inputrc
+
+ln -s $(pwd)/vim-pathogen/autoload/pathogen.vim  ~/.vim/autoload/pathogen.vim
+# on Windows, try `%userprofile%\vimfiles` instead of `~/.vim`
 ```
 
 
