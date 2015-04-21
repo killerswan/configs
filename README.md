@@ -50,6 +50,14 @@ Vim: Tern
 Run `npm install` in the package, and make sure Node.js and Python (matching Vim's architecture) are available.
 
 
+Vim: Syntactic
+==============
+
+I currently have Python's pyflakes enabled, but additional configs are required for [other supported checkers](https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers).
+
+All sorts of things use this: for example, [Liquid Haskell](https://github.com/ucsd-progsys/liquid-types.vim)!
+
+
 Vim: vimproc
 ============
 

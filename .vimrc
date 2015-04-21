@@ -80,7 +80,13 @@ else
 endif
 
 if has("statusline")
-   set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+    set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k
+    set statusline+=\ %-14.(%l,%c%V%)
+    set statusline+=\ %P
+    set statusline+=\ %#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
 endif
 
 " window split navigation (append <Bar> to maximize)
@@ -145,7 +151,22 @@ nnoremap <silent><leader>ll :<c-u>UniteResume<cr>
 " background calls to Ack
 let g:ack_use_dispatch = 1
 
-let g:syntastic_python_checkers = ['pyflakes']
+" combine multiple checkers
+let g:syntastic_aggregate_errors = 1
+
+" recommended n00b defaults
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Syntastic languages
+let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
+
+" paths for Syntastic
+"let g:syntastic_python_python_exec = '/path/to/python3'
+":echo syntastic#util#system('echo "$PATH"')
+
 
 
 
