@@ -9,6 +9,7 @@
 --type-set=rust:ext:rs
 --type-set=fsharp:ext:fs,fsx,fsi
 --type-set=julia:ext:jl,julia
+--type-add=julia:firstlinematch:/^#!.*\bjulia/
 
 --ignore-file=is:nosetests.xml
 

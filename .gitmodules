@@ -49,3 +49,6 @@
 [submodule "bundle/yate"]
 	path = bundle/yate
 	url = https://bitbucket.org/madevgeny/yate.git
+[submodule "bundle/vim-hdevtools"]
+	path = bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools.git

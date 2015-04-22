@@ -169,5 +169,8 @@ let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
 
 " try :YATE or :YATEStationary to search by tags
 
+let g:hdevtools_options = '-g-isrc -g-Wall'
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
 

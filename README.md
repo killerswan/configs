@@ -24,12 +24,13 @@ ln -s $(pwd)/vim-pathogen/autoload/pathogen.vim  ~/.vim/autoload/pathogen.vim
 
 On platforms with cpan, to set up Ack:
 
-```
+```bash
 sudo cpan App::Ack
 ```
 
 Or on OS X:
-```
+
+```bash
 brew install ack
 ```
 
@@ -37,11 +38,22 @@ brew install ack
 ==
 
 On OS X, to install Ag:
-```
+
+```bash
 brew install the_silver_searcher
 ```
 
 I also had to chown /usr/local/lib/pkgconfig, but that seems unrelated...
+
+
+hdevtools
+=========
+
+For Haskell:
+
+```bash
+cabal install hdevtools
+```
 
 
 Vim: Tern
