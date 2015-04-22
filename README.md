@@ -67,8 +67,6 @@ Vim: Syntactic
 
 I currently have Python's pyflakes enabled, but additional configs are required for [other supported checkers](https://github.com/scrooloose/syntastic/wiki/Syntax-Checkers).
 
-All sorts of things use this: for example, [Liquid Haskell](https://github.com/ucsd-progsys/liquid-types.vim)!
-
 
 Vim: vimproc
 ============
@@ -82,4 +80,20 @@ Vim: F# binding
 See [fsharpbinding's Vim README](https://github.com/fsharp/fsharpbinding/blob/master/vim/README.mkd).
 
 
+ctags
+=====
+
+To generate tags for C++, I'm using this:
+
+```
+ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=out
+```
+
+And I gather globally shared tags can be saved in `~/.vim/tags/`...
+
+
+liquid-types
+============
+
+In addition to the Liquid Haskell setup, additional steps are needed [for Vim support](https://github.com/ucsd-progsys/liquid-types.vim)!
 

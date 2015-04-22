@@ -52,3 +52,12 @@
 [submodule "bundle/vim-hdevtools"]
 	path = bundle/vim-hdevtools
 	url = https://github.com/bitc/vim-hdevtools.git
+[submodule "bundle/vim-annotations"]
+	path = bundle/vim-annotations
+	url = https://github.com/panagosg7/vim-annotations.git
+[submodule "liquid"]
+	path = liquid
+	url = https://github.com/ucsd-progsys/liquid-types.vim
+[submodule "liquid-types.vim"]
+	path = liquid-types.vim
+	url = https://github.com/ucsd-progsys/liquid-types.vim
