@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
+from this gist: https://gist.github.com/ssokolow/1009475
+
 Helpers for automating the process of setting up ported Linux/UNIX
 applications which were designed with expectations like being in $PATH.
 
