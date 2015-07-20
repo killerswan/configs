@@ -162,8 +162,13 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic languages
 let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
-let g:syntastic_elixir_checkers = ['elixir']
-let g:syntastic_enable_elixir_checker = ['elixir'] "override security issue
+"let g:syntastic_elixir_checkers = ['elixir']
+"let g:syntastic_enable_elixir_checker = 1
+"let g:syntastic_elixir_elixir_args = '+elixirc'
+
+" debugging
+"let g:syntastic_debug = 63
+"let g:syntastic_debug_file = '~/syntastic.log'
 
 " paths for Syntastic
 "let g:syntastic_python_python_exec = '/path/to/python3'
