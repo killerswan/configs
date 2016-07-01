@@ -1,19 +1,20 @@
 [user]
     name = Kevin Cantu
     email = me@kevincantu.org
-    #signingkey = 23423
+    #signingkey = XXXX
 
 [color]
     ui = true
 
 [core]
-    #autocrlf = false
+    autocrlf = true
     editor = gvim --nofork
-    #editor = vim
+    #editor = gvim.bat --nofork
 
     # Windows speedups
     preloadindex = true
     fscache = true
+    #longPaths = true
 
 [gc]
     #auto = 256
@@ -23,18 +24,59 @@
     #tool = kdiff3
 
 [mergetool "kdiff3"]
-   #path = C:/Progra~2/KDiff3/kdiff3.exe
-   #keepBackup = false
-   #trustExitCode = false
+    #path = C:/Progra~2/KDiff3/kdiff3.exe
+    #keepBackup = false
+    #trustExitCode = false
+
+[diff]
+    #compactionHeuristic = true
 
 [alias]
-   ll = log --decorate=full --graph --show-signature
-   # --no-pager
-   ffm = ! git fetch origin && git checkout master && git merge --ff-only origin/master && git ll -1
+    ll = log --decorate --graph --show-signature
+    ls = log --decorate --graph --show-signature --oneline
+    latest = for-each-ref --sort="-authordate:iso8601" --format="%(objectname:short)%20%(HEAD)%(refname:short)%09(%(authorname)%20%40%20%(authordate:relative))" refs/heads
+    llatest = for-each-ref --sort="-authordate:iso8601" --format="%(authordate:iso8601)%20[%(objectname:short)]%20%(HEAD)%(refname:short)%09%40%20%(committername)" refs/heads
+    ffm = ! git fetch origin && git checkout master && git merge --ff-only origin/master && git --no-pager ll -1
+    desc-se = --no-replace-objects describe --tags --match "selenium*"
+    cleanall = submodule foreach git clean -xfd
+
+    multi-arg-sample = "!sh -c \"f() { echo 'hello $1 -> $2'; }; f\""
+
+    # e.g.: origin/master new-feature
+    branchfrom = "!sh -c \"f() { \
+            git checkout $1 && \
+            git checkout -b $2 && \
+            git --no-pager log -1 --oneline --decorate; \
+        }; f\""
+
+    # e.g.: origin/master new-feature some-commit-id
+    bfromcp = "!sh -c \"f() { \
+            git branchfrom $1 $2 && git cherry-pick -x $3; \
+        }; f\""
+
+    # e.g.: origin next
+    force-reset-branch = "!sh -c \"f() {                                    \
+            git log --oneline -1 --decorate &&                              \
+            echo "starting branch: `git rev-parse --abbrev-ref HEAD`" &&    \
+            git checkout $2 &&                                              \
+            git reset --hard "`git rev-parse --abbrev-ref HEAD`" &&         \
+            git push -f $1 $2 ;                                             \
+            git checkout "`git rev-parse --abbrev-ref HEAD`" ;              \
+            git log --oneline -1 --decorate ;                               \
+        }; f\""
 
 [push]
     default = nothing
 
 [status]
     showUntrackedFiles = all
+    relativePaths = false
+    short = true
+    branch = false
+
+[transfer]
+    # warning: for new clones of old-school repos use this:
+    #   git -c transfer.fsckobjects=false clone ...
+    fsckobjects = true
+
 

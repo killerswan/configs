@@ -1,5 +1,10 @@
 " Kevin's GVIM config
 
+" note: to see a config as already set: `echo &name`
+
+" note: if on Windows the vim stuff resides at %userprofile%\vimfiles,
+" it may be necessary from Git Bash to link ~/.vim to that dir
+
 " default .vim/bundle/
 execute pathogen#infect()
 execute pathogen#infect('~/code/configs/bundle/{}')
@@ -9,23 +14,6 @@ filetype off
 syntax on
 filetype plugin on
 
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set noautoindent
-
-"set visualbell
-"set noerrorbells
-set number
-set hlsearch
-set ignorecase
-"set nowrap
-set fileformat=unix
-set display=uhex
-set ruler " otherwise, ctrl-g should show it
-set laststatus=2 " show statusline even for single buffer
-"set spell
 
 " ctags: tags file in current dir, dir of file, then walk up to root
 set tags=tags,./tags;/
@@ -48,11 +36,16 @@ if has("gui_running")
    endif
 
    if has("gui_win32")
-      set guifont=Consolas:h14  " 10 usually...  12 is pretty, though
+      set guifont=Consolas:h12  " 10 usually... 12 is pretty, and 14 needs glasses
       set printfont=Consolas:h9
 
       source $VIMRUNTIME/mswin.vim
       behave mswin "CTRL X, CTRL C, CTRL V
+
+      " Tern needs this and Node on the path
+      "let g:ycm_path_to_python_interpreter = 'C:\Python27-32bit\python.exe'
+      "let g:ycm_path_to_python_interpreter = 'C:\Python27\python.exe'
+
    endif
    
    colorscheme summerfruit
@@ -100,7 +93,8 @@ nnoremap <c-l> <c-w>l<c-w>
 " selection sorting: SHIFT-V, then highlight with j, then :sort
 
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.swp$']
+let NERDTreeShowHidden=1
 " saving a bookmark: `:Bookmark XYZ`
 
 "NERDTree by default
@@ -109,9 +103,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "To use :E instead of :NERDTree by default:
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | E | endif
-
-" Tern needs this and Node on the path
-"let g:ycm_path_to_python_interpreter = 'C:\Python27-32bit\python.exe'
 
 " Tern shortcuts after <leader> (AKA \): td, tb, tt, td, tpd, tsd, ttd, ttd,
 " tr, tR
@@ -153,6 +144,8 @@ nnoremap <silent><leader>ll :<c-u>UniteResume<cr>
 " background calls to Ack
 let g:ack_use_dispatch = 1
 
+nnoremap <silent><leader>r :<c-u>Ack <cword><cr>
+
 " combine multiple checkers
 let g:syntastic_aggregate_errors = 1
 
@@ -164,6 +157,7 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic languages
 let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
+let g:syntastic_cpp_checkers = []
 "let g:syntastic_elixir_checkers = ['elixir']
 "let g:syntastic_enable_elixir_checker = 1
 "let g:syntastic_elixir_elixir_args = '+elixirc'
@@ -176,10 +170,50 @@ let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
 "let g:syntastic_python_python_exec = '/path/to/python3'
 ":echo syntastic#util#system('echo "$PATH"')
 
+" F# / FSharp support
+let g:fsharpbinding_debug = 1
+"let g:fsharp_xbuild_path = "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe"
+"let g:fsharp_test_runner = ""
+"let g:fsharp_completion_helptext = 0 "off
+
 " try :YATE or :YATEStationary to search by tags
+"\t to :YATEStationary
+nnoremap <silent><leader>t :<c-u>YATEStationary<cr>
+" note, it would be nice to add an optional keyword to the command,
+" and in this mapping insert <cword>
+
+" YATE history autocompletion with <c-x><c-u>
+let g:YATE_enable_real_time_search = 0  " make it stop eating me
 
 let g:hdevtools_options = '-g-isrc -g-Wall'
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+
+" hide carriage returns
+match Ignore /\r/
+"to switch to DOS mode:             e ++ff=dos
+"followed by this to replace them:  setlocal ff=unix
+"or this:                           %s/\s\r*$//g
+
+
+" basic stuff should be down here to avoid anything evil, above, overriding it
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set noautoindent
+set backspace= " almost like vi, don't backspace through indent,eol,start
+
+"set visualbell
+"set noerrorbells
+set number
+set hlsearch
+set ignorecase
+"set nowrap
+set fileformat=unix
+set display=uhex
+set ruler " otherwise, ctrl-g should show it
+set laststatus=2 " show statusline even for single buffer
+"set spell
 
 
