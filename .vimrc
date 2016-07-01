@@ -41,8 +41,10 @@ if has("gui_running")
    endif
 
    if has("gui_macvim")       "possibly also with gtk2, hence not elseif?
-      set guifont=Menlo:h15
+      set guifont=Menlo:h17
       set printfont=Menlo:h9
+      set lines=50
+      set columns=120
    endif
 
    if has("gui_win32")

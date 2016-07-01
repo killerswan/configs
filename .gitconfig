@@ -8,7 +8,8 @@
 
 [core]
     #autocrlf = false
-    #editor = /usr/bin/gvim --nofork
+    editor = gvim --nofork
+    #editor = vim
 
     # Windows speedups
     preloadindex = true
