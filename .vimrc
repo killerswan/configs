@@ -216,4 +216,3 @@ set ruler " otherwise, ctrl-g should show it
 set laststatus=2 " show statusline even for single buffer
 "set spell
 
-

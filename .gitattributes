@@ -5,6 +5,15 @@
 .gitignore     code
 .gitmodules    code
 
+.vimrc          code
+.gitconfig      code
+.ackrc          code
+.ctags          code
+.hgrc           code
+.bash_profile   code
+.bashrc         code
+.inputrc        code
+
 *.md        code
 *.jl        code
 *.rs        code
@@ -49,6 +58,7 @@
 *.msg       eol=lf
 *.b64       text
 *.pem       text
+*.cer       text
 *.csr       text
 *.der       -text
 *.crt       -text

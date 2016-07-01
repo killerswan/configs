@@ -79,4 +79,3 @@
     #   git -c transfer.fsckobjects=false clone ...
     fsckobjects = true
 
-
