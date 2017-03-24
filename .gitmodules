@@ -58,6 +58,6 @@
 [submodule "bundle/vim-elixir"]
 	path = bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "bundle/pony-vim-syntax"]
-	path = bundle/pony-vim-syntax
-	url = https://github.com/dleonard0/pony-vim-syntax.git
+[submodule "bundle/vim-pony"]
+	path = bundle/vim-pony
+	url = https://github.com/jakwings/vim-pony.git
