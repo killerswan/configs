@@ -74,12 +74,6 @@ Vim: vimproc
 Compile this with `make` or, e.g., `make ARCHS='i386 x86_64'`.  (Required for grepping in Unite.vim.)
 
 
-Vim: F# binding
-===============
-
-See [fsharpbinding's Vim README](https://github.com/fsharp/fsharpbinding/blob/master/vim/README.mkd).
-
-
 ctags
 =====
 
