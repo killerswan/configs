@@ -6,6 +6,7 @@
 .gitmodules    code
 
 .vimrc          code
+.vim            code
 .gitconfig      code
 .ackrc          code
 .ctags          code
