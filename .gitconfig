@@ -7,7 +7,7 @@
     ui = true
 
 [core]
-    autocrlf = true
+    autocrlf = false # when true, converts to CRLF on checkout
     editor = gvim --nofork
     #editor = gvim.bat --nofork
 
