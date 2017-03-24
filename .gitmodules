@@ -1,12 +1,6 @@
 [submodule "vim-pathogen"]
 	path = vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "bundle/summerfruit"]
-	path = bundle/summerfruit
-	url = https://github.com/vim-scripts/summerfruit.vim.git
-[submodule "bundle/summerfruit256"]
-	path = bundle/summerfruit256
-	url = https://github.com/vim-scripts/summerfruit256.vim.git
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
