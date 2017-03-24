@@ -1,6 +1,6 @@
 [user]
-    name = Kevin Cantu
-    email = me@kevincantu.org
+    name = Kevin Cantú
+    email = kevincantu@gmail.com
     #signingkey = XXXX
 
 [color]
@@ -55,6 +55,7 @@
         }; f\""
 
     # e.g.: origin next
+    # BROKEN, however:
     force-reset-branch = "!sh -c \"f() {                                    \
             git log --oneline -1 --decorate &&                              \
             echo "starting branch: `git rev-parse --abbrev-ref HEAD`" &&    \
@@ -78,4 +79,3 @@
     # warning: for new clones of old-school repos use this:
     #   git -c transfer.fsckobjects=false clone ...
     fsckobjects = true
-

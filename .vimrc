@@ -45,6 +45,7 @@ if has("gui_running")
       " Tern needs this and Node on the path
       "let g:ycm_path_to_python_interpreter = 'C:\Python27-32bit\python.exe'
       "let g:ycm_path_to_python_interpreter = 'C:\Python27\python.exe'
+      "let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
    endif
    
@@ -58,7 +59,7 @@ if has("gui_running")
    " filetypes in menu by default
    let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax.&Show\ filetypes\ in\ menu
 else
-   behave xterm " from cygwin .vimrc
+   behave xterm
 endif
 
 " UTF-8
@@ -85,10 +86,16 @@ if has("statusline")
 endif
 
 " window split navigation (append <Bar> to maximize)
+" CTRL-...
 nnoremap <c-h> <c-w>h<c-w>
 nnoremap <c-j> <c-w>j<c-w>
 nnoremap <c-k> <c-w>k<c-w>
 nnoremap <c-l> <c-w>l<c-w>
+" CMD-...
+nnoremap <d-h> <c-w>h<c-w>
+nnoremap <d-j> <c-w>j<c-w>
+nnoremap <d-k> <c-w>k<c-w>
+nnoremap <d-l> <c-w>l<c-w>
 
 " selection sorting: SHIFT-V, then highlight with j, then :sort
 
@@ -118,10 +125,12 @@ let g:ctrlp_cmd = 'CtrlPLastMode'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 
 " grep.vim options
-let Grep_Path       = '"C:\Program Files (x86)\Git\bin\grep.exe"'
-let Grep_Find_Path  = '"C:\Program Files (x86)\Git\bin\find.exe"'
-let Grep_Xargs_Path = '"C:\Program Files (x86)\Git\bin\xargs.exe"'
-let Grep_Egrep_Path = '"C:\Program Files (x86)\Git\bin\egrep"'
+if has("gui_win32")
+  let Grep_Path       = '"C:\Program Files (x86)\Git\bin\grep.exe"'
+  let Grep_Find_Path  = '"C:\Program Files (x86)\Git\bin\find.exe"'
+  let Grep_Xargs_Path = '"C:\Program Files (x86)\Git\bin\xargs.exe"'
+  let Grep_Egrep_Path = '"C:\Program Files (x86)\Git\bin\egrep"'
+endif
 let Grep_Skip_Dirs  = 'out .git Output .venv *.egg-info RCS CVS SCCS'
 let Grep_Skip_Files = 'tags *.swp *.swo *.exe *~ *,v s.* *.o *.so *.tmp *.lock .DS_Store *.dSYM *.dylib *.rlib *.pyc *.pyo'
 
@@ -156,7 +165,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Syntastic languages
-let g:syntastic_python_checkers = ['pyflakes'] "possibly: try 'frosted'
+let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_cpp_checkers = []
 "let g:syntastic_elixir_checkers = ['elixir']
 "let g:syntastic_enable_elixir_checker = 1
@@ -167,11 +176,12 @@ let g:syntastic_cpp_checkers = []
 "let g:syntastic_debug_file = '~/syntastic.log'
 
 " paths for Syntastic
-"let g:syntastic_python_python_exec = '/path/to/python3'
+let g:syntastic_python_python_exec = '/path/to/python3'
+"let g:syntastic_python_python_exec = '/usr/bin/python'
 ":echo syntastic#util#system('echo "$PATH"')
 
 " F# / FSharp support
-let g:fsharpbinding_debug = 1
+"let g:fsharpbinding_debug = 1
 "let g:fsharp_xbuild_path = "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe"
 "let g:fsharp_test_runner = ""
 "let g:fsharp_completion_helptext = 0 "off
@@ -197,9 +207,9 @@ match Ignore /\r/
 
 
 " basic stuff should be down here to avoid anything evil, above, overriding it
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set noautoindent
 set backspace= " almost like vi, don't backspace through indent,eol,start
@@ -211,8 +221,8 @@ set hlsearch
 set ignorecase
 "set nowrap
 set fileformat=unix
+set fileformats=unix
 set display=uhex
 set ruler " otherwise, ctrl-g should show it
 set laststatus=2 " show statusline even for single buffer
 "set spell
-
