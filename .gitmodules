@@ -43,9 +43,6 @@
 [submodule "bundle/vim-elixir"]
 	path = bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "bundle/vim-pony"]
-	path = bundle/vim-pony
-	url = https://github.com/jakwings/vim-pony.git
 [submodule "bundle/vim-copypath"]
 	path = bundle/vim-copypath
 	url = https://github.com/taku-o/vim-copypath.git
