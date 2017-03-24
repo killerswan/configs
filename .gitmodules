@@ -28,9 +28,6 @@
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
-[submodule "bundle/julia-vim"]
-	path = bundle/julia-vim
-	url = https://github.com/JuliaLang/julia-vim.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
