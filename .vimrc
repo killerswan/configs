@@ -166,6 +166,8 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic languages
 let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_pony_checkers = ['currycomb']
+"let g:syntastic_pony_ponyc_exe = '/usr/local/bin/ponyc'
 let g:syntastic_cpp_checkers = []
 "let g:syntastic_elixir_checkers = ['elixir']
 "let g:syntastic_enable_elixir_checker = 1
@@ -176,9 +178,8 @@ let g:syntastic_cpp_checkers = []
 "let g:syntastic_debug_file = '~/syntastic.log'
 
 " paths for Syntastic
-let g:syntastic_python_python_exec = '/path/to/python3'
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "let g:syntastic_python_python_exec = '/usr/bin/python'
-":echo syntastic#util#system('echo "$PATH"')
 
 " F# / FSharp support
 "let g:fsharpbinding_debug = 1
