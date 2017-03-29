@@ -86,8 +86,10 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=.git --exclude=out
 And I gather globally shared tags can be saved in `~/.vim/tags/`...
 
 
-liquid-types
-============
+ShellCheck
+==========
 
-In addition to the Liquid Haskell setup, additional steps are needed [for Vim support](https://github.com/ucsd-progsys/liquid-types.vim)!
-
+To install [ShellCheck](https://www.shellcheck.net/):
+```
+brew install shellcheck
+```

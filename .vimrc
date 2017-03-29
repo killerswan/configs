@@ -165,6 +165,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Syntastic languages
+let g:syntastic_sh_checkers = ['sh', 'shellcheck']
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_pony_checkers = ['currycomb']
 "let g:syntastic_pony_ponyc_exe = '/usr/local/bin/ponyc'
