@@ -179,8 +179,15 @@ let g:syntastic_cpp_checkers = []
 "let g:syntastic_debug_file = '~/syntastic.log'
 
 " paths for Syntastic
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+"let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "let g:syntastic_python_python_exec = '/usr/bin/python'
+
+" Easy switching between Python2 and Python3 with virtualenv:
+" ```
+" virtualenv -p python3 venv
+" . venv/bin/activate
+" pip install pyflakes
+" ```
 
 " F# / FSharp support
 "let g:fsharpbinding_debug = 1
