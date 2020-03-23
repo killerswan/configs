@@ -1,0 +1,9 @@
+# %userprofile%/ssh/config
+
+Host alias1 alias2 dns.name.example
+  User ec2-user
+  IdentityFile C:\Users\kevin\.ssh\ec2\example.pem
+  HostName dns.name.example
+
+Host *
+  User ubuntu

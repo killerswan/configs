@@ -1,0 +1,132 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "0d9a5e45-1ae9-4619-a1de-0bbcfbed18a9"
+    json: {}
+  "atom-fuzzy-grep":
+    detectGitProjectAndUseGitGrep: false
+    grepCommandString: "ack --nocolor --nogroup --column"
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
+      showDirectoryColumn: true
+    use:
+      "atom-ide-busy-signal": "default"
+      "atom-ide-code-actions": "default"
+      "atom-ide-code-format": "default"
+      "atom-ide-code-highlight": "default"
+      "atom-ide-console": "default"
+      "atom-ide-datatip": "default"
+      "atom-ide-debugger": "default"
+      "atom-ide-definitions": "default"
+      "atom-ide-diagnostics": "default"
+      "atom-ide-diagnostics-ui": "default"
+      "atom-ide-find-references": "default"
+      "atom-ide-global": "default"
+      "atom-ide-outline-view": "default"
+      "atom-ide-signature-help": "default"
+      "atom-ide-terminal": "default"
+      hyperclick: "default"
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
+  "bracket-matcher":
+    alwaysSkipClosingPairs: true
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "linter"
+      "language-gfm"
+      "github"
+      "sll-tools"
+      "go-debug"
+      "go-signature-statusbar"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "bower_components"
+      "node_modules"
+      "vendor"
+      "go_modules"
+    ]
+    openEmptyEditorOnStart: false
+    restorePreviousWindowsOnStart: "always"
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "base16-tomorrow-light-theme"
+    ]
+    uriHandlerRegistration: "always"
+  "duotone-light-syntax":
+    color:
+      uno: "#e7168e"
+  editor:
+    fontFamily: "Menlo, Consolas, JetBrains Mono, DejaVu Sans Mono, monospaceod"
+    fontSize: 15
+    preferredLineLength: 120
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "d57db985-8c8d-4a23-adee-d6cd0c73b76d"
+  "file-icons": {}
+  "go-plus":
+    disabledBundledPackages: [
+      "go-signature-statusbar"
+      "go-debug"
+    ]
+    panel:
+      currentHeight: "11.923847695390782vh"
+      displayMode: "closed"
+    test:
+      runTestsOnSave: false
+  "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".node"
+      "*.jsx"
+    ]
+    jumpToImport: true
+  "json-sort":
+    indentationSize: 2
+  "linter-mathematica": {}
+  "linter-terraform-syntax":
+    newVersion: true
+    useTerraformFormat: true
+  "linter-ui-default":
+    panelHeight: 246
+  "markdown-writer":
+    fileExtension: ".md"
+  "one-o-eight-syntax": {}
+  "sll-tools":
+    autocomplete: true
+  "tree-view":
+    autoReveal: true
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
+  "vim-mode-plus":
+    ignoreCaseForSearch: true
+  welcome:
+    showOnStartup: false
+".mathematica.source":
+  editor:
+    autoIndent: false
+    preferredLineLength: 100
+    tabType: "hard"
+  whitespace:
+    removeTrailingWhitespace: true
+".md.text":
+  editor:
+    tabType: "soft"

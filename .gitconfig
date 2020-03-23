@@ -1,81 +1,107 @@
 [user]
-    name = Kevin Cantú
-    email = kevincantu@gmail.com
-    #signingkey = XXXX
+	name = Kevin Cantú
+	email = kevincantu@gmail.com
 
 [color]
-    ui = true
+	ui = true
 
 [core]
-    autocrlf = false # when true, converts to CRLF on checkout
-    editor = gvim --nofork
-    #editor = gvim.bat --nofork
+	autocrlf = false # when true, converts to CRLF on checkout
 
-    # Windows speedups
-    preloadindex = true
-    fscache = true
-    #longPaths = true
+	#editor = gvim --nofork
+	#editor = gvim.bat --nofork
+	#editor = atom --wait
+
+	# speedups
+	preloadindex = true
+	fscache = true
+	#longPaths = true
+
+	excludesfile = /Users/kevincantu/.gitignore_global
+
+	ignoreCase = true # intentionally conflate MyFile.txt and myfile.txt
 
 [gc]
-    #auto = 256
+	auto = 512 # gc very aggressively to avoid trouble later
 
 [merge]
-    conflictstyle = diff3
-    #tool = kdiff3
-
-[mergetool "kdiff3"]
-    #path = C:/Progra~2/KDiff3/kdiff3.exe
-    #keepBackup = false
-    #trustExitCode = false
+	conflictstyle = diff3
 
 [diff]
-    #compactionHeuristic = true
+	#compactionHeuristic = true
+	noprefix = true
 
 [alias]
-    ll = log --decorate --graph --show-signature
-    ls = log --decorate --graph --show-signature --oneline
-    latest = for-each-ref --sort="-authordate:iso8601" --format="%(objectname:short)%20%(HEAD)%(refname:short)%09(%(authorname)%20%40%20%(authordate:relative))" refs/heads
-    llatest = for-each-ref --sort="-authordate:iso8601" --format="%(authordate:iso8601)%20[%(objectname:short)]%20%(HEAD)%(refname:short)%09%40%20%(committername)" refs/heads
-    ffm = ! git fetch origin && git checkout master && git merge --ff-only origin/master && git --no-pager ll -1
-    desc-se = --no-replace-objects describe --tags --match "selenium*"
-    cleanall = submodule foreach git clean -xfd
+	ll = log --decorate --graph --oneline
+		# --show-signature
+	lll = log --decorate --stat=120 --name-only
+	llm = log --decorate --graph --pretty=medium --shortstat
 
-    multi-arg-sample = "!sh -c \"f() { echo 'hello $1 -> $2'; }; f\""
+	ammend-date = commit --amend --reset-author --no-edit
+	amend-date = commit --amend --reset-author --no-edit
 
-    # e.g.: origin/master new-feature
-    branchfrom = "!sh -c \"f() { \
-            git checkout $1 && \
-            git checkout -b $2 && \
-            git --no-pager log -1 --oneline --decorate; \
-        }; f\""
+	diff-staged = diff --staged
 
-    # e.g.: origin/master new-feature some-commit-id
-    bfromcp = "!sh -c \"f() { \
-            git branchfrom $1 $2 && git cherry-pick -x $3; \
-        }; f\""
+	#clip = "!sh -c \"git rev-parse HEAD | clip\""
+	clip = "!sh -c \"git rev-parse HEAD | pbcopy\""
 
-    # e.g.: origin next
-    # BROKEN, however:
-    force-reset-branch = "!sh -c \"f() {                                    \
-            git log --oneline -1 --decorate &&                              \
-            echo "starting branch: `git rev-parse --abbrev-ref HEAD`" &&    \
-            git checkout $2 &&                                              \
-            git reset --hard "`git rev-parse --abbrev-ref HEAD`" &&         \
-            git push -f $1 $2 ;                                             \
-            git checkout "`git rev-parse --abbrev-ref HEAD`" ;              \
-            git log --oneline -1 --decorate ;                               \
-        }; f\""
+	latest = for-each-ref --sort="-authordate:iso8601" --format="%(objectname:short)%20%(HEAD)%(refname:short)%09(%(authorname)%20%40%20%(authordate:relative))" refs/heads
+		# --merged=origin/master
+		# --no-merged=origin/master
+	llatest = for-each-ref --sort="-authordate:iso8601" --format="%(authordate:iso8601)%20[%(objectname:short)]%20%(HEAD)%(refname:short)%09%40%20%(committername)" refs/heads
 
-[push]
-    default = nothing
+	rebase-eol = rebase --strategy=recursive --strategy-option=renormalize --strategy-option=ignore-space-at-eol
+	cleanall = submodule foreach git clean -xfd
+
+	# clear up branches which were squash-merged (so `branch -d` doesn't work)
+	# e.g.: origin/master squash-merged-feature
+	branchclear = "!sh -c \"f() { \
+				git checkout $2 && git rebase	$1 && \
+				git checkout $1 && git branch -d $2;	\
+			}; f\""
+
+	new-branch = "!sh -c \"f() { \
+			git fetch origin && \
+			git checkout origin/develop && \
+			git checkout -b $1 && \
+			git --no-pager log -1 --oneline --decorate; \
+		}; f\""
+
+	multi-arg-sample = "!sh -c \"f() { echo 'hello $1 -> $2'; }; f\""
+	multi-line-sample = "!sh -c \"f() { \
+				echo 'one' && \
+				echo 'hello $1 -> $2'; \
+			}; f\""
+
+# nerf `git push`
+#[push]
+#	default = nothing
+
+# specify bogus remotes (named "disallowed") so `git push` cannot push these branches
+# (GitHub Desktop seems to ignore these and push to origin by name)
+[branch "develop"]
+	pushRemote = disallowed
+[branch "master"]
+	pushRemote = disallowed
+[branch "stable"]
+	pushRemote = disallowed
+[branch "banana"]
+	pushRemote = disallowed
 
 [status]
-    showUntrackedFiles = all
-    relativePaths = false
-    short = true
-    branch = false
+	showUntrackedFiles = all
+	relativePaths = false
+	short = true
+	branch = false
 
 [transfer]
-    # warning: for new clones of old-school repos use this:
-    #   git -c transfer.fsckobjects=false clone ...
-    fsckobjects = true
+	# warning: for new clones of old-school repos use this:
+	# git -c transfer.fsckobjects=false clone ...
+	fsckobjects = true
+
+[advice]
+	detachedHead = false
+
+################################################
+## AUTOMATED STUFF BELOW THIS
+################################################

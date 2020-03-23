@@ -14,12 +14,18 @@
 .bash_profile   code
 .bashrc         code
 .inputrc        code
+.zshrc          code
+.cson           code
+.coffee         code
+ssh-config      code
+ssh-config-win  code
 
 *.md        code
 *.jl        code
 *.rs        code
 *.hs        code
 *.bash      code
+*.zsh       code
 *.sh        code
 *.py        code
 *.rb        code
@@ -30,6 +36,7 @@
 *.css       code
 *.in        code
 *.wsgi      code
+*.m         code
 
 *.fs        wincode
 *.cs        wincode
@@ -63,5 +70,3 @@
 *.csr       text
 *.der       -text
 *.crt       -text
-
-
