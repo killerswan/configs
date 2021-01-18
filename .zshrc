@@ -21,8 +21,10 @@ path=("$HOME/bin" $path) # prepend
 path+=("$HOME/.local/bin")
 path+=("$GOPATH/bin")
 path+=("$GOROOT/bin")
-#path+=("$HOME/Library/Python/3.7/bin")
 path+=("$GEM_HOME/bin")
+
+# note 2021-01 this may or may not be ok
+path+=("$HOME/Library/Python/3.8/bin")
 
 # in zsh, path and PATH are implicitly bound
 # as in:

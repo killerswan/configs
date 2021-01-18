@@ -4,6 +4,7 @@ HERE="$(pushd "$(dirname "$0")" && pwd)"
 
 ### cmd line tools #########################################################
 
+#xcode-select --install
 sudo xcodebuild -license accept
 
 
