@@ -1,0 +1,47 @@
+{
+    "github.gitAuthentication": false,
+    "git.enabled": false,
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.fontSize": 14,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+    "go.formatTool": "goimports",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "vim.useSystemClipboard": true,
+    "terraform.languageServer": {
+        "external": true,
+        "pathToBinary": "",
+        "args": [
+            "serve"
+        ],
+        "maxNumberOfProblems": 100,
+        "trace.server": "off"
+    },
+    "terraform-ls.rootModules": [
+        "~/infra/env-docs-builder",
+        "~/infra/env-labinfra",
+        "~/infra/env-manifold",
+        "~/infra/env-neutrino",
+        "~/infra/env-ops",
+        "~/infra/env-prod",
+        "~/infra/env-rds-dev",
+        "~/infra/env-rds-prod",
+        "~/infra/env-stage",
+        "~/infra/env-wepc",
+        "~/infra/env-workflow",
+    ],
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+    "editor.fontFamily": "Menlo, Consolas, Hack, 'Courier New', monospace",
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "python.linting.flake8Args": [
+        "--ignore=E,W,C"
+    ],
+    "python.linting.flake8Enabled": true,
+    "evenBetterToml.formatter.indentString": "  ",
+    "evenBetterToml.formatter.indentTables": true
+}

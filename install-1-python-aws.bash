@@ -1,18 +1,24 @@
-#! /bin/zsh
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+#set -x
 
 HERE="$(pushd "$(dirname "$0")" && pwd)"
 
-### python 3.7 #########################################################
+### python 3 #########################################################
 brew install python
 
 
 ### aws #########################################################
-pip3 install awscli --upgrade --user
+python3 -m pip install wheel --upgrade --user
+python3 -m pip install awscli --upgrade --user
+python3 -m pip install ansible --upgrade --user
 
 
 ### ansible #########################################################
-pip3 install ansible --upgrade --user
-ln -s /Users/kevincantu/Library/Python/3.7/bin/ansible-playbook /usr/local/bin/ansible-playbook  # fix ansible weirdness
+#ln -s /Users/kevincantu/Library/Python/3.7/bin/ansible-playbook /usr/local/bin/ansible-playbook  # fix ansible weirdness
 
 
 ### kubectl #########################################################

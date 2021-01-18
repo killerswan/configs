@@ -37,6 +37,11 @@
 	lll = log --decorate --stat=120 --name-only
 	llm = log --decorate --graph --pretty=medium --shortstat
 
+	lc = log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold blue)<%cn>%Creset%C(bold red)%d%Creset %s %C(white)[%p]%Creset'
+ 	la = log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold green)<%an>%Creset%C(bold red)%d%Creset %s %C(white)[%p]%Creset'
+ 	laa = log        --pretty=format:'%C(yellow)%h%Creset %C(bold green)<%an>%Creset%C(bold red)%d%Creset\t%s %C(white)[%p]%Creset'
+
+
 	ammend-date = commit --amend --reset-author --no-edit
 	amend-date = commit --amend --reset-author --no-edit
 
@@ -87,6 +92,8 @@
 	pushRemote = disallowed
 [branch "banana"]
 	pushRemote = disallowed
+[branch "main"]
+	pushRemote = disallowed
 
 [status]
 	showUntrackedFiles = all
@@ -105,3 +112,8 @@
 ################################################
 ## AUTOMATED STUFF BELOW THIS
 ################################################
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

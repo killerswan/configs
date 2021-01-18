@@ -9,16 +9,20 @@ source ~/.kevin_secrets.sh
 # dev tools
 ################################################################
 
+export GEM_HOME="$HOME/.gem"
+
 #export GO111MODULE="on"
 #export GOFLAGS=-mod=vendor
 GOPATH="$HOME/go"          # where exes get built (can be implicit)
-GOROOT="/usr/local/go"     # where go is installed (can be implicit)
+GOROOT="/opt/go"     # where go is installed (can be implicit)
+#export GOPRIVATE="github.com/my/libraries"
 
+path=("$HOME/bin" $path) # prepend
 path+=("$HOME/.local/bin")
-path+=("$HOME/bin")
 path+=("$GOPATH/bin")
 path+=("$GOROOT/bin")
-path+=("$HOME/Library/Python/3.7/bin")
+#path+=("$HOME/Library/Python/3.7/bin")
+path+=("$GEM_HOME/bin")
 
 # in zsh, path and PATH are implicitly bound
 # as in:
@@ -69,9 +73,13 @@ export AWS_DEFAULT_PROFILE="mfa"
 # * AWS_ACCESS_KEY_ID
 # * AWS_SECRET_ACCESS_KEY
 
-# for kops
+# for terraform
 export AWS_PROFILE="mfa"
-export KOPS_STATE_STORE="s3://..."
+export TF_VAR_user=$USER
+
+# for kops
+#export AWS_PROFILE="mfa"
+#export KOPS_STATE_STORE="s3://..."
 
 # for kubectl
 #export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/eks-ops.yaml"
@@ -104,6 +112,15 @@ alias dir="ll"
 alias copy="cp"
 alias move="mv"
 
+function atom() {
+  echo "(Using 'code' instead.  For Atom, call 'real-atom'.)" >& 2
+  code $@
+}
+
+function real-atom() {
+  /usr/local/bin/atom $@
+}
+
 function where() {
   echo "(Try which instead of where.)" >& 2
   which $@
@@ -120,6 +137,8 @@ function kubeclt() {
 }
 
 alias ku="kubectl"
+
+alias aws-mfa="bash ~/code/configs/aws/mfa.bash"
 
 function contour-port-forward() {
   jj=0;

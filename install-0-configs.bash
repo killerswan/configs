@@ -10,12 +10,28 @@ sudo xcodebuild -license accept
 ### atom #########################################################
 # previously: install Atom for macOS
 
-mkdir ~/.atom
+#mkdir ~/.atom
 
-cp "$HERE"/atom/*.coffee ~/.atom
-cp "$HERE"/atom/*.cson ~/.atom
+#cp "$HERE"/atom/*.coffee ~/.atom
+#cp "$HERE"/atom/*.cson ~/.atom
 
-apm install --packages-file atom/apm-packages.txt
+#apm install --packages-file atom/apm-packages.txt
+
+
+
+### vs code #########################################################
+
+which code
+
+VS_CODE_USER="$HOME/Library/Application Support/Code/User/"
+mkdir -p "$VS_CODE_USER"
+mv "$VS_CODE_USER/settings.json" "$VS_CODE_USER/settings-backup.json"
+#ln -s "$HERE/vs-code/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+cp "$HERE/vs-code/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+
+bash "$HERE/vs-code/extensions-reinstall.sh"
+
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 
 ### .rc files #########################################################
